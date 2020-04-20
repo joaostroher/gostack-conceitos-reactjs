@@ -21,7 +21,7 @@ function App() {
     const response = await api.post("repositories", {
       title,
       url,
-      techs,
+      techs: techs.split(",").map((item) => item.trim()),
     });
     setTitle("");
     setUrl("");
